@@ -1,0 +1,3 @@
+Command Line: /usr/cad/synopsys/verdi/cur/platform/LINUXAMD64/bin/Novas -nologo -serverPort 14159
+uname(Linux ic23.cs.nthu.edu.tw 2.6.18-419.el5 #1 SMP Fri Feb 24 22:47:42 UTC 2017 x86_64)
+au time 15.020639 0.918860 0.120982 delta 8585216 9773056 total 16724984 17912824
