@@ -44,7 +44,7 @@ def def_TheAllConvNet_cp1(l_p_keep, tuple_args):
 ### Results
 The simulated result is reported to `res_<model name>_<config name>_<PE array option>_<quantization option>.csv`.
 
-It summarize the *total cycle*, **wait cycle**, **valid cal cycle**, **invalid cal cycle**, **_U_cal_**, and **_U_total_** of each layer.
+It summarize the **total cycle**, **wait cycle**, **valid calculation cycle**, **invalid calculation cycle**, **_U_cal_**, and **_U_total_** of each layer.
 
 The **classification accuracy** means accuracy of SystemC simulator's result comparing to the batch of test set which is set in `src_py/run.py`.
 
@@ -59,7 +59,18 @@ python3 run.py
 ```
 
 ### Results
-The result is reported to `Area_eval/res_<model name>_<config name>_<quantization option>.csv`.
-
-
-
+The result for each layer is reported to `Area_eval/res_<model name>_<config name>_<quantization option>.csv`.
+The result for whole DNN model is reported to `Area_eval/res_area.csv`.
+* **_N_PE_**: PE count
+* **_A_PEs_**: area of PE array
+* **_N_act_**: number of __act__ block
+* **_A_act_**: area of __act__ block
+* **_N_avg_**: number of __avg__ block
+* **_A_avg_**: area of __avg__ block
+* **_R_PEs_**: area ratio of PE array
+* **_Rr_syn_**: area ratio of register bit count in systolic array except the weight registers
+* **_Rr_pad_**: area ratio of register bit count in __pad__ block
+* **_R_act_**: area ratio of __act__ block
+* **_R_avg_**: area ratio of __avg__ block
+* **_Br_syn_ in `Area_eval/res_area.csv`**: register bit count in systolic array except the weight registers
+* **_Br_pad_ in `Area_eval/res_area.csv`**: register bit count in __pad__ block
