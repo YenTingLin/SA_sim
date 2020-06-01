@@ -41,3 +41,6 @@ _para. 1_: `'p1'`;
 _para. 2_: `'p2'`;
 _para. 4_: `'p4'`.
 
+### Results
+The simulated result is reported to `res_DNN Model_cp1_RRAM_w7a7.csv`
+
