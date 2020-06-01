@@ -12,30 +12,30 @@ import tr_graph
 import inf_graph
 
 parser = argparse.ArgumentParser('SAsim')
-parser.add_argument('--gpu', type=int, default=2, help='')#1
-parser.add_argument('--path_dataset', type=str, default='cifar10', help='')
-parser.add_argument('--path_dataset_txt', type=str, default='txt_CIFAR10', help='')
-parser.add_argument('--batch_size_txt', type=int, default=10, help='batch size in txt file, -1 for whole test set')#-1
-parser.add_argument('--path_output_file', type=str, default='my_file', help='')
-parser.add_argument('--path_saved_net', type=str, default='my_net', help='')
-parser.add_argument('--path_data_txt', type=str, default='txt_data', help='')
-parser.add_argument('--path_sc_config', type=str, default='src_sc/dir_config', help='')
-parser.add_argument('--DNN_model', type=str, default='DebugNet', help='')#'TheAllConvNet'
-parser.add_argument('--layer_cfg', type=str, default='cp4', help='')
-parser.add_argument('--RRAM_array', type=bool, default=True, help='')#False
-parser.add_argument('--w_qn_bits', type=int, default=7, help='weight quantization bits') # 8 -> 3
+parser.add_argument('--gpu', type=int, default=0, help='visible GPU index')
+parser.add_argument('--path_dataset', type=str, default='cifar10', help='path of dataset')
+parser.add_argument('--path_dataset_txt', type=str, default='txt_CIFAR10', help='path of evaluated dataset (reported to text file)')
+parser.add_argument('--batch_size_txt', type=int, default=10, help='batch size in txt file, -1 for whole test set')
+parser.add_argument('--path_output_file', type=str, default='my_file', help='path of output file')
+parser.add_argument('--path_saved_net', type=str, default='my_net', help='path of saved net')
+parser.add_argument('--path_data_txt', type=str, default='txt_data', help='path of result file for inference')
+parser.add_argument('--path_sc_config', type=str, default='src_sc/dir_config', help='path of SystemC config file')
+parser.add_argument('--DNN_model', type=str, default='TheAllConvNet', help='model name')
+parser.add_argument('--layer_cfg', type=str, default='cp1', help='config name')
+parser.add_argument('--RRAM_array', type=bool, default=False, help='PE array implementation')
+parser.add_argument('--w_qn_bits', type=int, default=7, help='weight quantization bits')
 parser.add_argument('--b_qn_bits', type=int, default=-1, help='bias quantization bits, -1 for w_qn_bits + 8')
-parser.add_argument('--a_qn_bits', type=int, default=7, help='activation quantization bits') # 8 -> 3
-parser.add_argument('--export_txt', type=bool, default=True, help='')#True
-parser.add_argument('--learning_rate_max', type=float, default=0.1, help='')
-parser.add_argument('--half_decay_epoch', type=float, default=1, help='')
-parser.add_argument('--epsilon_bn', type=float, default=0.001, help='')
-parser.add_argument('--momentum', type=float, default=0.9, help='')
-parser.add_argument('--lr_decay_rate', type=float, default=0.1, help='')
+parser.add_argument('--a_qn_bits', type=int, default=7, help='activation quantization bits')
+parser.add_argument('--export_txt', type=bool, default=True, help='export the result file for inference')
+parser.add_argument('--learning_rate_max', type=float, default=0.1, help='maximun learning rate for training')
+parser.add_argument('--half_decay_epoch', type=float, default=1, help='learning rate decay epoch for training')
+parser.add_argument('--epsilon_bn', type=float, default=0.001, help='epsilon in batch normalization')
+parser.add_argument('--momentum', type=float, default=0.9, help='momentum in stochastic gradient descent')
+parser.add_argument('--lr_decay_rate', type=float, default=0.1, help='learning rate decay for training')
 parser.add_argument('--n_batch', type=int, default=50, help='batch size for pre-training/training step')
 parser.add_argument('--n_batch_inf', type=int, default=100, help='batch size for inference step')
-parser.add_argument('--n_epoch_fp', type=int, default=30, help='training epochs for pre-training step')#300
-parser.add_argument('--n_epoch_tr', type=int, default=10, help='training epochs for training step')#10
+parser.add_argument('--n_epoch_fp', type=int, default=300, help='training epochs for pre-training step')
+parser.add_argument('--n_epoch_tr', type=int, default=10, help='training epochs for training step')
 #parser.add_argument('--', type=, default=, help='')
 args = parser.parse_args()
 
