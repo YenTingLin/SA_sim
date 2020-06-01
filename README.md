@@ -11,9 +11,9 @@ Python == 3.7.7, TensorFlow == 1.15.0, SystemC-2.3.3, Design Compiler Version Q-
 ```
 python3 src_py/run.py
 ```
-**Define Neural Network**
+### Define Neural Network
 In `src_py/CNN_ctor.py`, define functions to construct the neuro network with different layer configurations.
-```
+```py
 def def_TheAllConvNet_cp1(l_p_keep, tuple_args):
 	init = tuple_args[3].init
 	k1 = 96
@@ -35,5 +35,7 @@ def def_TheAllConvNet_cp1(l_p_keep, tuple_args):
 	layer_def.layer_conv(1, init.dataset.K, 1, 'SAME', 'p1', tuple_args, name='layerC8')
 	layer_def.layer_global_avg(tuple_args, name='layer9')
 ```
-
+_para. 1_: `'p1'`
+_para. 2_: `'p2'`
+_para. 4_: `'p4'`
 
