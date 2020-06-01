@@ -43,8 +43,11 @@ _para. 4_: `'p4'`.
 
 ### Results
 The simulated result is reported to `res_<model name>_<config name>_<PE array option>_<quantization option>.csv`.
+
 It summarize the **total cycle**, **wait cycle**, **valid cal cycle**, **invalid cal cycle**, **_U_cal_**, and **_U_total_** of each layer.
+
 The **classification accuracy** means accuracy of SystemC simulator's result comparing to the batch of test set which is set in `src_py/run.py`.
+
 The **reference accuracy** means accuracy of SystemC simulator's result comparing to the TensorFlow inference's result.
 
 ## Area Evaluation
@@ -56,7 +59,6 @@ python3 run.py
 ```
 
 ### Results
-
 5
 
 6
