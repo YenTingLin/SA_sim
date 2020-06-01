@@ -59,6 +59,7 @@ python3 run.py
 ```
 
 ### Results
-5
+The result is reported to `Area_eval/res_<model name>_<config name>_<quantization option>.csv`.
 
-6
+
+
