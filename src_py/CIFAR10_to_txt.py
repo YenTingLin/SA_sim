@@ -14,9 +14,9 @@ def main(args):
     logging.info('INFO: Dump image...')
     with open(args.path_dataset_txt + '/image.txt', 'w') as fout:
         if B >= 0 and B < dataset.test_images_len():
-            a_image = np.transpose(np.reshape(dataset.test_images[:B], [-1, ld.C, ld.X0, ld.Y0]), [0, 2, 3, 1])
+            a_image = np.transpose(np.reshape(dataset.test_images[:B], [-1, dataset.C, dataset.X0, dataset.Y0]), [0, 2, 3, 1])
         else:
-            a_image = np.transpose(np.reshape(dataset.test_images, [-1, ld.C, ld.X0, ld.Y0]), [0, 2, 3, 1])
+            a_image = np.transpose(np.reshape(dataset.test_images, [-1, dataset.C, dataset.X0, dataset.Y0]), [0, 2, 3, 1])
         util.dump(fout, a_image, 'image')
         fout.write('image:mul\n0 0\n')
     logging.info('INFO: Dump label...')
